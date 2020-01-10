@@ -1,0 +1,15 @@
+.product_container{
+    margin: 5% 5% 5% 5%;
+}
+
+@media only screen and (max-width: 768px) {
+    .product_container{
+        margin: 10% 5% 5% 5%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product_container{
+        margin: 20% 5% 5% 5%;
+    }
+  }

@@ -1,0 +1,22 @@
+<div class="product_container">
+    <div class="row">
+        <div cdkDropList (cdkDropListDropped)="drop($event)" style="display:flex;flex-wrap:wrap">
+            <div class="col-md-4 col-lg-3 col-sm-12 d-flex align-items-stretch"
+                *ngFor="let general_product of products.general_products" cdkDrag>
+                <div class="card" style="width: 18rem;">
+                    <img  class="card-img-top image-fluid" [src]="general_product[1].image"
+                    onError="this.src='assets/images/default.png'">
+                    <div class="card-body  d-flex flex-column">
+                        <h5 class="card-title">{{general_product[1].name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{general_product[1].key}}</h6>
+                        <p class="card-text">
+                            {{ (general_product[1].description.length>30)? (general_product[1].description | slice:0:30)+'..':(general_product[1].description) }}
+                        </p>
+                        <footer class="blockquote-footer">{{general_product[1].author}}</footer>
+                        <button class="btn btn-primary btn-block mt-auto" (click)="viewProduct(general_product[1],general_product[0])">View Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
